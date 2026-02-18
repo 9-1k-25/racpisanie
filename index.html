@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расписание 9-1к-25</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#4f46e5">
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then(reg => console.log('SW зарегистрирован!'))
+        .catch(err => console.log('Ошибка SW:', err));
+    });
+  }
+</script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Группа 9-1к-25</h1>
+            <p id="current-date"></p>
+        </header>
+
+        <nav>
+            <button class="nav-btn" onclick="showDay('пн')">ПН</button>
+            <button class="nav-btn" onclick="showDay('вт')">ВТ</button>
+            <button class="nav-btn" onclick="showDay('ср')">СР</button>
+            <button class="nav-btn" onclick="showDay('чт')">ЧТ</button>
+            <button class="nav-btn" onclick="showDay('пт')">ПТ</button>
+            <button class="nav-btn" onclick="showDay('сб')">СБ</button>
+       </nav>
+        <main id="schedule-container">
+            <div class="empty-state">Выберите день недели</div>
+        </main>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
