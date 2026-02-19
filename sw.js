@@ -1,9 +1,9 @@
 const CACHE_NAME = 'schedule-v1';
 const ASSETS = [
   './',
-  './index.html',
+  './main.html',
   './style.css',
-  './index.js'
+  './script.js'
 ];
 
 // Установка: кэшируем файлы
@@ -20,4 +20,5 @@ self.addEventListener('fetch', (event) => {
       return response || fetch(event.request);
     })
   );
+
 });
